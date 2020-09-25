@@ -56,6 +56,33 @@ body {
     outline-offset: 2px;
 }
 
+/* Svg Icon */
+.player-btn__icon {
+    width: 150px;
+    height: 150px;
+}
+
+.player-btn__icon path {
+    transition: fill 0.5s linear;
+}
+
+.player-btn__icon .om-icon__aum {
+    fill: #ff5a58;
+}
+
+.player-btn__icon .om-icon__circle {
+    fill:#ffc144;
+}
+
+
+.player-btn__icon:hover .om-icon__aum {
+    fill:#ffc144;
+}
+
+.player-btn__icon:hover .om-icon__circle {
+    fill: #ff5a58;
+}
+
 @keyframes pulse {
 	0% {
 		transform: scale(0.95);
