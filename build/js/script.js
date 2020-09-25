@@ -22,7 +22,11 @@ class CurrentRaggas {
     }
 
     touched() {
-        this.isTouched = true
+        this.isTouched = true;
+    }
+
+    untouched() {
+        this.isTouched = false;
     }
 }
 var currentRaggas = new CurrentRaggas();
@@ -86,5 +90,11 @@ var onBtnClick = (evt) => {
     audio.pause()
 };
 
+var onAudioEnded = () => {
+    currentRaggas.untouched();
+    playRaggas();
+};
+
 btnPlay.addEventListener('click', onBtnClick);
+audio.addEventListener('ended', onAudioEnded)
 fetchAudioList();
