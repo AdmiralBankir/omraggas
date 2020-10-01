@@ -52,9 +52,9 @@ body {
     overflow: hidden;
 
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
-	transform: scale(1);
+    transform: scale(1);
     animation: pulse 2s infinite;
-    
+
     position: relative;
     z-index: 10000;
 }
@@ -65,20 +65,20 @@ body {
 }
 
 @keyframes pulse {
-	0% {
-		transform: scale(0.95);
-		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-	}
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
 
-	70% {
-		transform: scale(1);
-		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-	}
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
 
-	100% {
-		transform: scale(0.95);
-		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-	}
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
 }
 
 /* Gif */
@@ -108,41 +108,41 @@ body {
 }
 
 .player-btn__icon .om-icon__circle {
-    fill:var(--color-orange-aum);
+    fill: var(--color-orange-aum);
     animation: circle-icon 1.5s infinite;
     animation-timing-function: ease-in-out;
 }
 
 @keyframes aum-icon {
-	0% {
+    0% {
         fill: var(--color-red-aum);
-	}
+    }
 
-	70% {
-        fill:var(--color-orange-aum);
-	}
+    70% {
+        fill: var(--color-orange-aum);
+    }
 
-	100% {
+    100% {
         fill: var(--color-red-aum);
-	}
+    }
 }
 
 @keyframes circle-icon {
-	0% {
-        fill:var(--color-orange-aum);
-	}
+    0% {
+        fill: var(--color-orange-aum);
+    }
 
-	70% {
+    70% {
         fill: var(--color-red-aum);
-	}
+    }
 
-	100% {
-        fill:var(--color-orange-aum);
-	}
+    100% {
+        fill: var(--color-orange-aum);
+    }
 }
 
 .player-btn__icon:hover .om-icon__aum {
-    fill:var(--color-orange-aum);
+    fill: var(--color-orange-aum);
 }
 
 .player-btn__icon:hover .om-icon__circle {
@@ -154,4 +154,5 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    height: 100vh;
 }
