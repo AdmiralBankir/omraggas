@@ -10,10 +10,16 @@
 </head>
 
 <body>
+  <header class="page-header">
+    <button class="page-header__lang-btn lang-btn" type="button">
+      <span>RU</span>
+      <span>EN</span>
+    </button>
+  </header>
   <main class="page-main">
     <h1 class="visually-hidden">omraggas: raggas online</h1>
     <audio id="audio" src=""></audio>
-    <button class="player-btn" id="warp" aria-label="audio-control: play" title="Play!" type="button">
+    <button class="player-btn" aria-label="audio-control: play" title="Play!" type="button">
       <svg class="player-btn__icon" viewBox="0 0 512.001 512.001" xmlns="http://www.w3.org/2000/svg">
         <g>
           <path class="om-icon__aum"
@@ -35,6 +41,23 @@
       <img class="player-btn__gif" width="150" height="150" src="src/img/sarasvati.gif" alt="Sarasvati">
     </button>
   </main>
+  <section class="about">
+    <h2 class="about__title">
+      <button class="about__expanded-btn" type="button">What's going on here</button>
+    </h2>
+    <div class="about__text-wrapper about__text-wrapper--active star-wars">
+      <div class="crawl">
+        <p class="about__text">
+          Indian music is the only one in the world where different ragas correspond to different times of day. 
+          It is believed that listening to ragas that are not the right time is to harm yourself.
+        </p>
+        <p class="about__text">
+          The division of ragas by time of day exists only in the North Indian tradition. 
+          In India, a day is divided into 8 parts of 3 hours each.
+        </p>
+      </div>
+    </div>
+  </section>
   <div class="space" id='w'>
     <canvas id="space"></canvas>
   </div>

@@ -1,0 +1,54 @@
+.star-wars {
+    /* Flexbox to center the entire element on the screen */
+    display: flex;
+    justify-content: center;
+    /* This sets allows us to transform the text on a 3D plane, and is somewhat a magic number */
+    perspective: calc(0.5 * var(--height-star-wars));
+    /* The rest is totally up to personal styling preferences */
+    color: var(--color-orange-aum);
+    font-family: 'Pathway Gothic One', sans-serif;
+    line-height: 150%;
+    text-align: justify;
+    font-size: 450%;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+@media(max-width: 767px) {
+    .star-wars {
+        font-size: 30px;
+    }
+}
+
+.crawl {
+    /* Position the element so we can adjust the top property in the animation */
+    position: relative;
+    /* Defines the skew origin at the very center when we apply transforms on the animation */
+    transform-origin: 50% 100%;
+    /* Adds the crawl animation, which plays for one minute */
+    animation: crawl 60s linear;
+}
+
+@media(max-width: 767px) {
+    .crawl {
+        animation: crawl 120s linear;
+    }
+}
+
+/* Animation */
+/* We're calling this animation "crawl" */
+@keyframes crawl {
+    0% {
+        /* The element starts below the screen */
+        top: 0;
+        /* Rotate the text 20 degrees but keep it close to the viewer */
+        transform: rotateX(20deg) translateZ(0);
+    }
+
+    100% {
+        /* This is a magic number, but using a big one to make sure the text is fully off the screen at the end */
+        top: -6000px;
+        /* Slightly increasing the rotation at the end and moving the text far away from the viewer */
+        transform: rotateX(25deg) translateZ(-2500px);
+    }
+}

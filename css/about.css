@@ -1,0 +1,64 @@
+@import "star-wars.css";
+
+/* About */
+.about {
+    position: absolute;
+    top: 0;
+    z-index: 333;
+    width: 100vw;
+}
+
+/* Tit;e */
+.about__title {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/* Button */
+.about__expanded-btn {
+    background: transparent;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    border: none;
+
+    color: var(--color-red-aum);
+    border-bottom: 3px solid var(--color-orange-aum);
+    padding-bottom: 3px;
+    opacity: 0;
+
+    transition: transform 1s linear,
+        opacity 1s linear,
+        border 1s linear,
+        color 1s linear;
+}
+
+.about__expanded-btn--active {
+    opacity: 1;
+}
+
+.about__expanded-btn:hover {
+    transform: scale(1.1);
+    border-bottom: 3px solid var(--color-red-aum);
+    color: var(--color-orange-aum);
+}
+
+.about__expanded-btn:focus {
+    outline: 3px solid var(--color-red-aum);
+    outline-offset: 5px;
+}
+
+/* Text */
+.about__text-wrapper {
+    display: none;
+    height: var(--height-star-wars);
+    overflow: hidden;
+}
+
+.about__text-wrapper--active {
+    display: block;
+}
+
+.about__text-wrapper .crawl {
+    height: var(--height-star-wars);
+}

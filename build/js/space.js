@@ -6,6 +6,7 @@ window.requestAnimFrame = (function () {
 })();
 var canvas = document.getElementById("space");
 var c = canvas.getContext("2d");
+var warpBtn = document.getElementById("warp");
 
 var numStars = 1900;
 var radius = '0.' + Math.floor(Math.random() * 9) + 1;
@@ -86,9 +87,12 @@ function drawStars() {
 
 export function makeSpace() {
     executeFrame();
-    document.getElementById('warp').addEventListener("click", function (e) {
-        warp = warp == 1 ? 0 : 1;
-        c.clearRect(0, 0, canvas.width, canvas.height);
-        executeFrame();
-    });
+
+    if (warpBtn) {
+        warpBtn.addEventListener("click", function (e) {
+            warp = warp == 1 ? 0 : 1;
+            c.clearRect(0, 0, canvas.width, canvas.height);
+            executeFrame();
+        });
+    }
 };
