@@ -1,6 +1,9 @@
 @import "normalize.css";
 @import "focus-visible.css";
 @import "about.css";
+@import "audio.css";
+@import "player-btn.css";
+@import "audio-info.css";
 
 /* Common Styles */
 .visually-hidden {
@@ -28,7 +31,9 @@ body {
 :root {
     --color-orange-aum: #ffc144;
     --color-red-aum: #ff5a58;
+    --color-blue-star: #1b7deb;
     --height-star-wars: calc(100vh - 100px);
+    --btn-size: 150px;
 }
 
 /* Main */
@@ -37,158 +42,6 @@ body {
     place-items: center;
     min-height: 100vh;
     background-color: #000000;
-}
-
-/* Player */
-.player-btn {
-    display: flex;
-    justify-content: center;
-    width: 150px;
-    height: 150px;
-    background: transparent;
-    cursor: pointer;
-    margin: 0;
-    padding: 0;
-    border: none;
-    border-radius: 50%;
-    overflow: hidden;
-
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
-    transform: scale(1);
-    animation: pulse 2s infinite;
-
-    position: relative;
-    z-index: 10000;
-}
-
-@media(max-width: 767px) {
-    .player-btn {
-        width: 100px;
-        height: 100px;
-    }
-
-    .player-btn--played {
-        width: 150px;
-        height: 150px;
-    }
-}
-
-.player-btn:focus {
-    outline: 3px solid var(--color-red-aum);
-    outline-offset: 2px;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-    }
-
-    70% {
-        transform: scale(1);
-        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-    }
-
-    100% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    }
-}
-
-.player-btn--played {
-    animation: pulse-play 2s infinite;
-}
-
-@keyframes pulse-play {
-    0% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(245, 243, 243, 0.7);
-    }
-
-    70% {
-        transform: scale(1);
-        box-shadow: 0 0 0 100px rgba(241, 241, 241, 0);
-    }
-
-    100% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    }
-}
-
-/* Gif */
-.player-btn__gif {
-    display: none;
-    object-fit: cover;
-}
-
-.player-btn--played .player-btn__gif {
-    display: block;
-}
-
-/* Svg Icon */
-.player-btn__icon {
-    width: 150px;
-    height: 150px;
-}
-
-@media(max-width: 767px) {
-    .player-btn__icon {
-        width: 100px;
-        height: 100px;
-    }
-}
-
-.player-btn__icon path {
-    transition: fill 0.5s linear;
-}
-
-.player-btn__icon .om-icon__aum {
-    fill: var(--color-red-aum);
-    animation: aum-icon 1.5s infinite;
-    animation-timing-function: ease-in-out;
-}
-
-.player-btn__icon .om-icon__circle {
-    fill: var(--color-orange-aum);
-    animation: circle-icon 1.5s infinite;
-    animation-timing-function: ease-in-out;
-}
-
-@keyframes aum-icon {
-    0% {
-        fill: var(--color-red-aum);
-    }
-
-    70% {
-        fill: var(--color-orange-aum);
-    }
-
-    100% {
-        fill: var(--color-red-aum);
-    }
-}
-
-@keyframes circle-icon {
-    0% {
-        fill: var(--color-orange-aum);
-    }
-
-    70% {
-        fill: var(--color-red-aum);
-    }
-
-    100% {
-        fill: var(--color-orange-aum);
-    }
-}
-
-.player-btn__icon:hover .om-icon__aum {
-    fill: var(--color-orange-aum);
-}
-
-.player-btn__icon:hover .om-icon__circle {
-    fill: var(--color-red-aum);
 }
 
 /* Space */

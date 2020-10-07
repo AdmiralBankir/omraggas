@@ -1,0 +1,33 @@
+.audio-info {
+    position: absolute;
+    z-index: 2;
+    color: #ffffff;
+    text-shadow: 0 0px 30px var(--color-blue-star);
+}
+
+.audio-info__text {
+    font-size: 30px;
+    font-weight: 700;
+    animation: spin 20s infinite linear;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+}
+
+.audio-info__text span {
+    position: absolute;
+    transform-origin: 50% 100%;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}

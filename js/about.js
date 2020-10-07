@@ -2,8 +2,8 @@
 
 var aboutBtn = document.querySelector('.about__expanded-btn');
 var aboutText = document.querySelector('.about__text-wrapper');
-var timeOutId = undefined;
 var timeOut = 30000;
+var timeOutId = undefined;
 
 export function aboutAddListener() {
     if (aboutBtn) {
@@ -11,7 +11,7 @@ export function aboutAddListener() {
             evt.preventDefault();
             aboutText.classList.toggle('about__text-wrapper--active');
             clearTimeout(timeOutId);
-            timeoutId = setTimeout(() => {
+            timeOutId = setTimeout(() => {
                 aboutText.classList.remove('about__text-wrapper--active');
             }, timeOut);
         });

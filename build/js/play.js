@@ -1,4 +1,10 @@
 'use strict';
+import {
+    updateAudioInfo,
+    wrapAudioInfo,
+    toggleInfoActive
+} from './audio-info.js';
+
 var audio = document.getElementById('audio');
 var btnPlay = document.querySelector('.player-btn');
 var audioList = {};
@@ -8,6 +14,7 @@ class CurrentRaggas {
         this.time = undefined,
             this.playList = [],
             this.currentTrackIndex = 0,
+            this.currentTrack = undefined,
             this.isTouched = false
     }
 
@@ -18,6 +25,9 @@ class CurrentRaggas {
         } else {
             this.currentTrackIndex++;
         }
+
+        this.currentTrack = this.playList[currentTrack];
+
         return this.playList[currentTrack];
     }
 
@@ -73,7 +83,12 @@ function getPlayList(date) {
 };
 
 function playRaggas() {
-    if (!currentRaggas.isTouched) audio.src = getAudioTrack();
+    if (!currentRaggas.isTouched) {
+        audio.src = getAudioTrack();
+        wrapAudioInfo(currentRaggas.currentTrack);
+    } else {
+        toggleInfoActive();
+    };
     audio.play();
     currentRaggas.touched();
 }
@@ -83,9 +98,12 @@ var onBtnClick = (evt) => {
 
     btnPlay.classList.toggle('player-btn--played');
 
-    btnPlay.classList.contains('player-btn--played') ?
-        playRaggas() :
-        audio.pause()
+    if (btnPlay.classList.contains('player-btn--played')) {
+        playRaggas();
+    } else {
+        audio.pause();
+        toggleInfoActive();
+    }
 };
 
 var onAudioEnded = () => {
@@ -95,6 +113,9 @@ var onAudioEnded = () => {
 
 export function play() {
     btnPlay.addEventListener('click', onBtnClick);
-    audio.addEventListener('ended', onAudioEnded)
+    audio.addEventListener('ended', onAudioEnded);
+    audio.addEventListener('timeupdate', () => {
+        updateAudioInfo(audio.currentTime, audio.duration);
+    });
     fetchAudioList();
 };
