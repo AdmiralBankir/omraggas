@@ -5,9 +5,14 @@ import {
     toggleInfoActive
 } from './audio-info.js';
 
+import {
+    debounce
+} from './debounce.js';
+
 var audio = document.getElementById('audio');
 var btnPlay = document.querySelector('.player-btn');
 var audioList = {};
+var CLICK_INTERVAL = 500;
 
 class CurrentRaggas {
     constructor() {
@@ -62,7 +67,6 @@ function setExpirationTime(timeEnd) {
     var expirationTime = endDate.getTime() - currentDate.getTime();
     console.log('Expiration Time(ms): ', expirationTime);
     var timeOut = setTimeout(() => {
-        console.log('Im in TimeOut!!!');
         clearTimeout(timeOut);
         currentRaggas = new CurrentRaggas();
         currentRaggas.playList = getPlayList(new Date());
@@ -87,7 +91,7 @@ function playRaggas() {
         audio.src = getAudioTrack();
         wrapAudioInfo(currentRaggas.currentTrack);
     } else {
-        toggleInfoActive();
+        toggleInfoActive('PLAY');
     };
     audio.play();
     currentRaggas.touched();
@@ -102,7 +106,7 @@ var onBtnClick = (evt) => {
         playRaggas();
     } else {
         audio.pause();
-        toggleInfoActive();
+        toggleInfoActive('PAUSE');
     }
 };
 
@@ -112,7 +116,7 @@ var onAudioEnded = () => {
 };
 
 export function play() {
-    btnPlay.addEventListener('click', onBtnClick);
+    btnPlay.addEventListener('click', debounce(onBtnClick, CLICK_INTERVAL));
     audio.addEventListener('ended', onAudioEnded);
     audio.addEventListener('timeupdate', () => {
         updateAudioInfo(audio.currentTime, audio.duration);

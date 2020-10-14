@@ -116,5 +116,5 @@ gulp.task('json', function (done) {
    done();
 });
 
-gulp.task('build', gulp.series('clean', 'js', 'json', 'audio', 'img', 'sprite', 'css', 'html'));
+gulp.task('build', gulp.series('clean', 'js', 'img', 'json', 'audio', 'sprite', 'css', 'html'));
 gulp.task('start', gulp.series('build', 'server'));

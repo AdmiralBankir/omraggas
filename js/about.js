@@ -1,25 +1,30 @@
 'use strict';
 
-var aboutBtn = document.querySelector('.about__expanded-btn');
-var aboutText = document.querySelector('.about__text-wrapper');
-var timeOut = 30000;
-var timeOutId = undefined;
+import {
+    toggleTransparentText
+} from './audio-info.js';
 
-export function aboutAddListener() {
-    if (aboutBtn) {
-        aboutBtn.addEventListener('click', (evt) => {
-            evt.preventDefault();
-            aboutText.classList.toggle('about__text-wrapper--active');
-            clearTimeout(timeOutId);
-            timeOutId = setTimeout(() => {
-                aboutText.classList.remove('about__text-wrapper--active');
-            }, timeOut);
-        });
+export function aboutAddObserver() {
+    var options = {
+        rootMargin: '-50%',
+        threshold: 0
     }
-    document.addEventListener('DOMContentLoaded', () => {
-        timeOutId = setTimeout(() => {
-            aboutText.classList.remove('about__text-wrapper--active');
-            aboutBtn.classList.add('about__expanded-btn--active');
-        }, timeOut);
-    })
+    var callback = function (entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                toggleTransparentText();
+            }
+        });
+    };
+
+    var observer = new IntersectionObserver(callback, options);
+    var target = getTarget();
+
+    observer.observe(target);
 };
+
+function getTarget() {
+    var lang = document.querySelector('html').getAttribute('lang');
+    var texts = document.querySelectorAll('.lang--' + lang);
+    return texts[texts.length - 1];
+}

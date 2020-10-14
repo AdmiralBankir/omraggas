@@ -8,12 +8,6 @@
     width: 100vw;
 }
 
-/* Tit;e */
-.about__title {
-    text-align: center;
-    margin-bottom: 0;
-}
-
 /* Button */
 .about__expanded-btn {
     background: transparent;
@@ -23,9 +17,13 @@
     border: none;
 
     color: var(--color-red-aum);
-    border-bottom: 3px solid var(--color-orange-aum);
-    padding-bottom: 3px;
+    border: 3px solid var(--color-orange-aum);
+    border-radius: 50%;
+    padding: 3px;
     opacity: 0;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
 
     transition: transform 1s linear,
         opacity 1s linear,
@@ -39,7 +37,7 @@
 
 .about__expanded-btn:hover {
     transform: scale(1.1);
-    border-bottom: 3px solid var(--color-red-aum);
+    border: 3px solid var(--color-red-aum);
     color: var(--color-orange-aum);
 }
 

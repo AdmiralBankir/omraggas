@@ -4,6 +4,7 @@
 @import "audio.css";
 @import "player-btn.css";
 @import "audio-info.css";
+@import "lang.css";
 
 /* Common Styles */
 .visually-hidden {
@@ -34,6 +35,12 @@ body {
     --color-blue-star: #1b7deb;
     --height-star-wars: calc(100vh - 100px);
     --btn-size: 150px;
+}
+
+@media(max-width: 767px) {
+    :root {
+        --btn-size: 125px;
+    }
 }
 
 /* Main */

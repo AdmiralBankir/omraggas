@@ -26,12 +26,12 @@
     /* Defines the skew origin at the very center when we apply transforms on the animation */
     transform-origin: 50% 100%;
     /* Adds the crawl animation, which plays for one minute */
-    animation: crawl 60s linear;
+    animation: crawl 66.6s infinite linear;
 }
 
 @media(max-width: 767px) {
     .crawl {
-        animation: crawl 120s linear;
+        animation: crawl 120s infinite linear;
     }
 }
 

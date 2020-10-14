@@ -1,10 +1,19 @@
 'use strict';
+
 var TIMECODE_LENGTH = 11;
 var text = document.querySelector('.audio-info__text');
-var infoBuffer = undefined;
-var audioInfo = undefined;
+var infoBuffer;
+var infoMoch;
+var audioInfo;
 var centerX = window.innerWidth / 2;
 var centerY = window.innerHeight / 2;
+
+(function wrapText() {
+    document.addEventListener('DOMContentLoaded', () => {
+        wrap(text);
+        infoMoch = text.innerHTML;
+    });
+})();
 
 class AudioInfo {
     constructor(name) {
@@ -35,13 +44,6 @@ class AudioInfo {
     }
 }
 
-(function wrapText() {
-    document.addEventListener('DOMContentLoaded', () => {
-        wrap(text);
-        infoBuffer = text.innerHTML;
-    });
-})();
-
 export function updateAudioInfo(timeCode, duration) {
     if (audioInfo.update(timeCode, duration)) {
         updateTextContent();
@@ -52,27 +54,39 @@ export function wrapAudioInfo(name) {
     audioInfo = new AudioInfo(name);
     text.innerHTML = audioInfo.printInfo();
     wrap(text);
+    infoBuffer = text.innerHTML;
 };
 
-export function toggleInfoActive() {
-    var tmp = text.innerHTML;
-    text.innerHTML = infoBuffer;
-    infoBuffer = tmp;
+export function toggleInfoActive(state) {
+    text.innerHTML = '';
+    switch (state) {
+        case 'PLAY':
+            text.innerHTML = infoBuffer;
+            break;
+        case 'PAUSE':
+            text.innerHTML = infoMoch;
+            break;
+        default:
+            break;
+    }
+};
+
+export function toggleTransparentText() {
+    text.classList.toggle('audio-info__text--transparent');
 };
 
 function updateTextContent() {
     var time = audioInfo.printTime();
     var chars = text.querySelectorAll('span');
     var cnt = TIMECODE_LENGTH - 1;
-
-    for (var i = chars.length - 1; i > (chars.length - TIMECODE_LENGTH); i--) {
+    for (let i = chars.length - 1; i > (chars.length - TIMECODE_LENGTH); i--) {
         chars[i].textContent = time[cnt];
         cnt--;
     }
 };
 
 function wrap(txt) {
-    if(!txt) return;
+    if (!txt) return;
 
     var start = -90;
     var angle = 360;

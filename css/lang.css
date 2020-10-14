@@ -1,0 +1,8 @@
+/* Lang */
+html[lang="en"] .lang--ru {
+    display: none;
+}
+
+html[lang="ru"] .lang--en {
+    display: none;
+}
