@@ -5,6 +5,7 @@
 @import "player-btn.css";
 @import "audio-info.css";
 @import "lang.css";
+@import "controls.css";
 
 /* Common Styles */
 .visually-hidden {
@@ -35,6 +36,9 @@ body {
     --color-blue-star: #1b7deb;
     --height-star-wars: calc(100vh - 100px);
     --btn-size: 150px;
+
+    --control-size-width: 242px;
+    --control-size-height: 378px;
 }
 
 @media(max-width: 767px) {
@@ -56,4 +60,10 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+}
+
+/* Buttons */
+button:focus {
+    outline: 3px solid var(--color-red-aum);
+    outline-offset: 2px;
 }

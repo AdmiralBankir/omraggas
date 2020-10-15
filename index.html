@@ -1,5 +1,6 @@
-<!DOCTYPE html> 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ru">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,8 +18,27 @@
 
 <body>
   <header class="page-header">
+    <div class="controls">
+      <button class="controls__lang-btn controls__lang-btn--en" type="button" aria-label="Change language">
+        <svg class="ru-icon" xmlns="http://www.w3.org/2000/svg" height="378" width="242" viewBox="0 0 242 378">
+          <path
+            d="M161.75 202.773h27.466v122.415h-87.825c-35.268 0-48.492-13.225-48.492-48.49v-73.925h27.467v74.602c0 15.6 6.104 22.042 20.346 22.042h61.037zM26.448 26.443h189.218v325.534H26.449zM0 378.425h242.116V-.007H0zM148.187 106.81H80.366V79.003h67.82c10.171 0 14.92 5.426 14.92 13.564s-4.07 14.242-14.92 14.242zm42.386-17.294c0-20.346-9.833-36.283-38.658-36.283H52.899v122.413h27.467V132.58h63.411c14.243 0 17.972 4.07 17.972 18.312v24.753h27.467v-29.162c0-14.546-5.16-23.079-16.621-25.982 11.924-4.03 17.978-15.56 17.978-30.986"
+            fill="#231f20" />
+        </svg>
+        <svg class="en-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path
+            d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm1 16.057V13h2.994a18.523 18.523 0 01-.456 3.279A24.257 24.257 0 0013 16.057zm1.957 2.162c-.499 1.33-1.159 2.497-1.957 3.456v-3.62c.666.028 1.319.081 1.957.164zM13 11V7.985a24.177 24.177 0 002.548-.224c.238 1.027.389 2.111.446 3.239H13zm0-5.014V2.325c.806.969 1.471 2.15 1.971 3.496-.642.084-1.3.137-1.971.165zm2.703-3.267a10.028 10.028 0 013.29 2.146c-.642.234-1.311.442-2.019.607a15.322 15.322 0 00-1.271-2.753zm-7.241 13.56A18.431 18.431 0 018.006 13H11v3.057c-.865.034-1.714.102-2.538.222zM11 18.055v3.62c-.798-.959-1.458-2.126-1.957-3.456A22.505 22.505 0 0111 18.055zM8.006 11c.057-1.128.207-2.212.446-3.239.827.121 1.68.19 2.548.224V11H8.006zM9.03 5.821c.5-1.346 1.165-2.527 1.97-3.496v3.661a22.35 22.35 0 01-1.97-.165zm-2.005-.35a17.35 17.35 0 01-2.018-.607 10.038 10.038 0 013.29-2.146 15.459 15.459 0 00-1.272 2.753zm-.549 1.918A20.38 20.38 0 005.984 11H2.051a9.925 9.925 0 011.617-4.518c.88.361 1.816.67 2.808.907zm.009 9.262a19.19 19.19 0 00-2.797.9A9.923 9.923 0 012.051 13h3.934c.058 1.265.231 2.488.5 3.651zm.553 1.917c.342.976.768 1.881 1.257 2.712a10.01 10.01 0 01-3.256-2.115 17.594 17.594 0 011.999-.597zm9.924 0c.7.163 1.362.367 1.999.597a10.06 10.06 0 01-3.257 2.116c.489-.832.915-1.737 1.258-2.713zm.553-1.917c.27-1.163.442-2.386.501-3.651h3.934a9.935 9.935 0 01-1.638 4.551 19.23 19.23 0 00-2.797-.9zM18.016 11a20.473 20.473 0 00-.492-3.611 19.078 19.078 0 002.809-.907A9.936 9.936 0 0121.949 11h-3.933z" />
+        </svg>
+      </button>
+
+      <button class="controls__volume-btn" type="button" aria-label="Control volume">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M9 18H2V6h7v12zm2-12v12l11 6V0L11 6z" />
+        </svg>
+      </button>
+    </div>
+
     <div class="about">
-        <!-- <button class="about__expanded-btn about__expanded-btn--active" type="button">?</button> -->
       <div class="about__text-wrapper about__text-wrapper--active star-wars">
         <div class="crawl">
           <p class="about__text lang lang--en">
@@ -45,7 +65,9 @@
   </header>
   <main class="page-main">
     <h1 class="visually-hidden">omraggas: raggas online</h1>
-    <div class="audio">
+    <section class="audio">
+      <h2 class="visually-hidden lang--en">Audio player</h2>
+      <h2 class="visually-hidden lang--ru">Аудио плеер</h2>
       <audio id="audio" src=""></audio>
       <button class="player-btn" aria-label="audio-control: play" title="Play!" type="button">
         <svg class="player-btn__icon" viewBox="0 0 512.001 512.001" xmlns="http://www.w3.org/2000/svg">
@@ -68,9 +90,11 @@
         </svg>
         <img class="player-btn__gif" width="150" height="150" src="src/img/sarasvati.gif" alt="Sarasvati">
       </button>
-    </div>
+    </section>
     <section class="audio-info">
-      <h2 class="visually-hidden">Information about the current raga</h2>
+      <h2 class="visually-hidden lang--en">Information about the current ragga</h2>
+      <h2 class="visually-hidden lang--ru">Информация о проигрываемой рагге</h2>
+
       <p class="audio-info__text">Push the button and play ragga</p>
     </section>
   </main>

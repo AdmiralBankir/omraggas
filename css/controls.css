@@ -1,0 +1,71 @@
+.controls {
+    position: absolute;
+    z-index: 222222222222;
+    right: 5vw;
+    top: 20px;
+    min-height: 42px;
+    max-height: 42px;
+    display: flex;
+    align-items: center;
+}
+
+.controls__lang-btn,
+.controls__volume-btn {
+    display: block;
+    background: transparent;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.controls__lang-btn svg path,
+.controls__volume-btn svg path {
+    fill: #ffffff;
+    transition: fill 0.5s linear;
+}
+
+.controls__lang-btn:hover svg path,
+.controls__volume-btn:hover svg path {
+    fill: var(--color-orange-aum);
+}
+
+/* Language control */
+.controls__lang-btn {
+    position: relative;
+    margin-right: 20px;
+}
+
+.controls__lang-btn .ru-icon {
+    --resize-coeff: 9;
+    width: calc(var(--control-size-width) / var(--resize-coeff));
+    height: calc(var(--control-size-height) / var(--resize-coeff));
+}
+
+.controls__lang-btn .en-icon {
+    display: none;
+}
+
+.controls__lang-btn--en .ru-icon {
+    display: none;
+}
+
+.controls__lang-btn--en .en-icon {
+    display: block;
+}
+
+/* Volume control */
+.controls__volume-btn {
+    position: relative;
+}
+
+.controls__volume-btn--mute::after {
+    content: '';
+    height: 3px;
+    width: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-54deg) translate(-12px, 3px);
+    background-color: var(--color-red-aum);
+}

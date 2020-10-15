@@ -4,6 +4,11 @@ import {
     toggleTransparentText
 } from './audio-info.js';
 
+import {
+    getElementsInLang
+} from './lang.js';
+
+
 export function aboutAddObserver() {
     var options = {
         rootMargin: '-50%',
@@ -24,7 +29,6 @@ export function aboutAddObserver() {
 };
 
 function getTarget() {
-    var lang = document.querySelector('html').getAttribute('lang');
-    var texts = document.querySelectorAll('.lang--' + lang);
+    var texts = getElementsInLang('.about__text');
     return texts[texts.length - 1];
 }

@@ -1,5 +1,7 @@
 'use strict';
 
+import {getElementsInLang} from './lang.js';
+
 var TIMECODE_LENGTH = 11;
 var text = document.querySelector('.audio-info__text');
 var infoBuffer;

@@ -22,11 +22,6 @@
 
 }
 
-.player-btn:focus {
-    outline: 3px solid var(--color-red-aum);
-    outline-offset: 2px;
-}
-
 @keyframes pulse {
     0% {
         transform: scale(0.95);

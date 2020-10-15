@@ -123,3 +123,11 @@ export function play() {
     });
     fetchAudioList();
 };
+
+export function toggleVolume() {
+    if (audio.volume) {
+        audio.volume = 0;
+    } else {
+        audio.volume = 1;
+    }
+};
