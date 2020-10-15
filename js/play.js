@@ -58,6 +58,7 @@ function fetchAudioList() {
 
 function getAudioTrack() {
     var track = currentRaggas.getNextTrack();
+    console.log('Get New Track: ', track)
     return AUDIO_SRC + currentRaggas.time + '/' + track;
 }
 

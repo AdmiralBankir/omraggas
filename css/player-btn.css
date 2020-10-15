@@ -64,6 +64,7 @@
 .player-btn__gif {
     display: none;
     object-fit: cover;
+    object-position: top;
 }
 
 .player-btn--played .player-btn__gif {

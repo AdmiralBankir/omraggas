@@ -77,7 +77,7 @@ gulp.task("sprite", function () {
 });
 
 gulp.task("img", function () {
-  return gulp.src("src/img/*.{gif,png}")
+  return gulp.src("src/img/*.{gif,png,mp4}")
         .pipe(gulp.dest("build/src/img"))
 })
 
