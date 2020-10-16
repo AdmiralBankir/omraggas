@@ -3,9 +3,12 @@
 /* About */
 .about {
     position: absolute;
-    top: 0;
     z-index: 333;
     width: 100vw;
+    max-width: 1200px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Button */

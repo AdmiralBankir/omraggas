@@ -1,12 +1,16 @@
 .controls {
     position: absolute;
     z-index: 222222222222;
-    right: 5vw;
-    top: 20px;
+    top: 2vh;
     min-height: 42px;
     max-height: 42px;
     display: flex;
     align-items: center;
+    width: 100vw;
+    max-width: 1200px;
+    left: calc(50% - 5vw);
+    transform: translateX(-50%);
+    justify-content: flex-end;
 }
 
 .controls__lang-btn,
