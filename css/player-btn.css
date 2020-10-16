@@ -40,8 +40,9 @@
 }
 
 .player-btn--played {
-    animation: pulse-play 2s infinite;
+    animation: pulse-play 3s infinite;
 }
+
 
 @keyframes pulse-play {
     0% {
@@ -51,12 +52,12 @@
 
     70% {
         transform: scale(1);
-        box-shadow: 0 0 0 100px rgba(241, 241, 241, 0);
+        box-shadow: 0 0 30px 100px transparent;
     }
 
     100% {
         transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 0 transparent;
     }
 }
 

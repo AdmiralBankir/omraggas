@@ -1,0 +1,45 @@
+.page-footer {
+    position: absolute;
+    z-index: 222222222222;
+    bottom: 2vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+/* Link list */
+.page-footer__link-list {
+    font-family: "FontOfKindness";
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.page-footer__link-item {
+    transition: transform .3s linear;
+}
+
+.page-footer__link-item:hover {
+    transform: scale(1.1);
+}
+
+.page-footer__link-list a {
+    text-decoration: none;
+    line-height: 0;
+    display: block;
+}
+
+.page-footer__link-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.page-footer__link-item--kindness a {
+    color: #ffffff;
+}
+
+/* Svg */
+.page-footer__link-item--inst svg path {
+    fill: #ffffff;
+}
