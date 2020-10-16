@@ -2,7 +2,8 @@
 import {
     updateAudioInfo,
     wrapAudioInfo,
-    toggleInfoActive
+    toggleInfoActive,
+    toggleTextPlayed
 } from './audio-info.js';
 
 import {
@@ -109,6 +110,8 @@ var onBtnClick = (evt) => {
         audio.pause();
         toggleInfoActive('PAUSE');
     }
+
+    toggleTextPlayed();
 };
 
 var onAudioEnded = () => {

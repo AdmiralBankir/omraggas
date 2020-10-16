@@ -24,12 +24,16 @@
 
 @media(max-width: 767px) {
     .audio-info__text {
-        font-size: 18px;
+        font-size: 20px;
     }
 }
 
 .audio-info__text--transparent {
     opacity: 0;
+}
+
+.audio-info__text--played {
+    opacity: 1 !important;
 }
 
 .audio-info__text span {

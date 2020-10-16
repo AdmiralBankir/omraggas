@@ -77,6 +77,10 @@ export function toggleTransparentText() {
     text.classList.toggle('audio-info__text--transparent');
 };
 
+export function toggleTextPlayed() {
+    text.classList.toggle('audio-info__text--played');
+}
+
 function updateTextContent() {
     var time = audioInfo.printTime();
     var chars = text.querySelectorAll('span');
