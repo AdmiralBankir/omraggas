@@ -78,6 +78,11 @@
     height: var(--btn-size);
 }
 
+.player-btn--played .player-btn__icon {
+    display: none;
+}
+
+
 .player-btn__icon path {
     transition: fill 0.5s linear;
 }
