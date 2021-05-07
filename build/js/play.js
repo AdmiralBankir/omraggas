@@ -49,10 +49,11 @@ var currentRaggas = new CurrentRaggas();
 var AUDIO_SRC = './src/audio/';
 
 function fetchAudioList() {
-    fetch('/src/audio/audio.json')
+    fetch('./src/audio/audio.json')
         .then(response => response.json())
         .then(json => {
             audioList = json;
+            console.log(json)
             currentRaggas.playList = getPlayList(new Date());
         });
 }
@@ -79,6 +80,8 @@ function getPlayList(date) {
     var hour = date.getHours();
     for (var key in audioList) {
         var [start, end] = key.split('-');
+        console.log("start, end", start, end)
+        console.log("hour", hour)
         if (hour >= start && hour < end) {
             currentRaggas.time = key;
             console.log('Current playlist: ', currentRaggas.time)
