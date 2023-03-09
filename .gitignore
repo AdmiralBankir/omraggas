@@ -12,5 +12,4 @@ node_modules/
 npm-debug.*
 Thumbs.db
 desktop.ini
-src/audio/
-build/src/audio/
+

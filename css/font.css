@@ -1,8 +1,0 @@
-@font-face {
-    font-family: "FontOfKindness";
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-    src: url("../src/fonts/FontOfKindness-Regular.woff2") format("woff2"), 
-        url("../src/fonts/FontOfKindness-Regular.woff") format("woff");
-  }
